@@ -7,7 +7,29 @@ Rifare l'esercizio della to do list. Questa volta però ogni todo sarà un ogget
 createApp({
     data() {
         return {
-            
+            tasks: [
+
+                {
+                    text:"Groceries",
+                    done: "false",
+                },
+                {
+                    text: "House cleaning",
+                    done: "false",
+                },
+                {
+                    text: "Car maintenance",
+                    done: "false",
+                },
+                {
+                    text: "Workout",
+                    done: "false",
+                },
+                {
+                    text: "Daily Boolean exercise",
+                    done: "false",
+                }
+            ]
         }
     }
 }).mount('#app')
