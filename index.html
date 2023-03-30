@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <ul v-if="tasks.length > 0">
                                 <li class="list-unstyled" v-for="(task, index) in tasks">{{task.text}}
-                                    <i @click="removeFromToDo" class="fa-solid fa-xmark"></i>
+                                    <i @click="removeFromToDo(index)" class="fa-solid fa-xmark"></i>
                                 </li>
                             </ul>
                             <h2 v-else>task completate!!</h2>
