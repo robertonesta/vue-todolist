@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-6 toDoTasks text-center">
                         <div class="card-header py-1">
-                            <h3>To do</h3>
+                            <h2>To do</h2>
                         </div>
                         <div class="card-task py-2">
                             <input type="text" v-model.trim="newTask">
@@ -29,19 +29,26 @@
                         </div>
                         <div class="card-body">
                             <ul v-if="tasks.length > 0">
-                                <li class="list-unstyled" v-for="(task, index) in tasks">{{task.text}}
+                                <li class="list-unstyled" v-for="(task, index) in tasks">
+                                    <span @click="done(index)">{{task.text}}</span>
                                     <i @click="removeFromToDo(index)" class="fa-solid fa-xmark"></i>
                                 </li>
                             </ul>
-                            <h2 v-else>task completate!!</h2>
+                            <h3 v-else>task completate!!</h3>
                         </div>
                     </div>
                     <div class="col-6 completed text-center">
                         <div class="card-header py-1">
-                            <h3>Completed</h3>
+                            <h2>Completed</h2>
                         </div>
                         <div class="card-body">
-
+                            <ul v-if="completed.length > 0">
+                                <li class="list-unstyled" v-for="task in completed">
+                                    <span>{{task.text}}</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                            </ul>
+                            <h3 v-else>Nessuna task completata</h3>
                         </div>
                     </div>
                 </div>

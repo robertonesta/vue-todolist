@@ -32,7 +32,8 @@ createApp({
             ],
             newTask: [],
             error: false,
-            errorMessage: "Tasks must have at least 3 characters"
+            errorMessage: "Tasks must have at least 3 characters",
+            completed: []
         }
     },
     methods: {
@@ -40,15 +41,20 @@ createApp({
             this.tasks.splice(index, 1);
         },
         addToToDoList(){
-            if (this.newTask.length >= 3){
+            if (this.newTask.length >= 3) {
                 this.tasks.push({text: this.newTask, done:false});
                 this.newTask = "";
-                this.errorMessage = false;
+                this.error = false;
 
             } else {
-                this.errorMessage = true;
+                this.error = true;
             }
+        },
+        done(index){
+            this.completed.push(this.tasks[index])
+            this.tasks.splice(index, 1)
         }
+        
     }
 
 }).mount('#app')
