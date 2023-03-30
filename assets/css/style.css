@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
-.card-header, .card-body{
+.card-header, .card-task, .card-body{
     border: 1px solid;
+}
+
+.fa-xmark{
+    color: red;
 }

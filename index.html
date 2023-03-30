@@ -19,16 +19,30 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6 toDoTasks text-center">
-                        <h3 class="card-header py-1">To do</h3>
+                        <div class="card-header py-1">
+                            <h3>To do</h3>
+                        </div>
+                        <div class="card-task py-2">
+                            <input type="text" v-model.trim="newTask">
+                            <button class="mx-1 px-3">Add Task</button>
+                            <div v-if="error"><strong>{{errorMessage}}</strong></div>
+                        </div>
                         <div class="card-body">
-                            <ul>
-                            <li class="list-unstyled"></li>
+                            <ul v-if="tasks.length > 0">
+                                <li class="list-unstyled" v-for="(task, index) in tasks">{{task.text}}
+                                    <i @click="removeFromToDo" class="fa-solid fa-xmark"></i>
+                                </li>
                             </ul>
+                            <h2 v-else>task completate!!</h2>
                         </div>
                     </div>
                     <div class="col-6 completed text-center">
-                        <h3 class="card-header py-1">Completed</h3>
-                        <div class="card-body"></div>
+                        <div class="card-header py-1">
+                            <h3>Completed</h3>
+                        </div>
+                        <div class="card-body">
+
+                        </div>
                     </div>
                 </div>
             </div>

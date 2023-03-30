@@ -11,26 +11,35 @@ createApp({
 
                 {
                     text:"Groceries",
-                    done: "false",
+                    done: "false"
                 },
                 {
                     text: "House cleaning",
-                    done: "false",
+                    done: "false"
                 },
                 {
                     text: "Car maintenance",
-                    done: "false",
+                    done: "false"
                 },
                 {
                     text: "Workout",
-                    done: "false",
+                    done: "false"
                 },
                 {
                     text: "Daily Boolean exercise",
-                    done: "false",
+                    done: "false"
                 }
-            ]
+            ],
+            newTask: [],
+            error: false,
+            errorMessage: "Tasks must have at least 3 characters"
+        }
+    },
+    methods: {
+        removeFromToDo(index) {
+            this.tasks.splice(index, 1);
         }
     }
+
 }).mount('#app')
 
