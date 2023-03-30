@@ -38,6 +38,16 @@ createApp({
     methods: {
         removeFromToDo(index) {
             this.tasks.splice(index, 1);
+        },
+        addToToDoList(){
+            if (this.newTask.length >= 3){
+                this.tasks.push({text: this.newTask, done:false});
+                this.newTask = "";
+                this.errorMessage = false;
+
+            } else {
+                this.errorMessage = true;
+            }
         }
     }
 

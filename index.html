@@ -24,7 +24,7 @@
                         </div>
                         <div class="card-task py-2">
                             <input type="text" v-model.trim="newTask">
-                            <button class="mx-1 px-3">Add Task</button>
+                            <button class="mx-1 px-3" @click="addToToDoList()">Add Task</button>
                             <div v-if="error"><strong>{{errorMessage}}</strong></div>
                         </div>
                         <div class="card-body">
